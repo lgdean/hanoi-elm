@@ -23,6 +23,7 @@ towerBase =
         [ Background.color (rgb255 0 0 0)
         , Border.rounded 5
         , paddingXY 70 10
+        , centerX
         ]
         (text "")  -- TODO there must be a better way
 
@@ -39,7 +40,7 @@ towerPole =
 tower : Element msg
 tower =
     column
-        []
+        [ width fill ]
         [ el
               [ inFront (column [centerX, alignBottom] [disc 1, disc 2, disc 3, disc 4]), centerX ]
               towerPole
