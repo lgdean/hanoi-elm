@@ -1,8 +1,7 @@
-import Element exposing (Element, Color, el, text, row, column, alignBottom, inFront, fill, width, rgb255, spacing, spaceEvenly, centerX, centerY, padding, paddingXY)
+import Element exposing (Element, Color, el, row, column, alignBottom, inFront, fill, width, rgb255, spacing, spaceEvenly, centerX, centerY, padding, paddingXY)
 import Element.Background as Background
 import Basics exposing (modBy)
 import Element.Border as Border
-import Element.Font as Font
 
 
 main = 
@@ -25,7 +24,7 @@ towerBase =
         , paddingXY 70 10
         , centerX
         ]
-        (text "")  -- TODO there must be a better way
+        Element.none
 
 towerPole : Element msg
 towerPole =
@@ -35,7 +34,7 @@ towerPole =
         , paddingXY 10 60
         , centerX
         ]
-        (text "")  -- TODO there must be a better way
+        Element.none
 
 tower : Element msg
 tower =
@@ -57,7 +56,7 @@ disc n =
         , paddingXY (10 * (n + 1)) 10
         , centerX
         ]
-        (text "")  -- TODO there must be a better way
+        Element.none
 
 discColor : Int -> Color
 discColor n =
