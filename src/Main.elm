@@ -13,9 +13,9 @@ main =
 myRowOfStuff : Element msg
 myRowOfStuff =
     row [ width fill, centerY, spaceEvenly, padding 10 ]
-        [ tower
-        , tower
-        , tower
+        [ viewTower [ 1, 2, 3, 4 ]
+        , viewTower []
+        , viewTower []
         ]
 
 
@@ -41,12 +41,16 @@ towerPole =
         Element.none
 
 
-tower : Element msg
-tower =
+viewTower : List Int -> Element msg
+viewTower discs =
+    let
+        discView =
+            column [ centerX, alignBottom ] (List.map disc discs)
+    in
     column
         [ width fill ]
         [ el
-            [ inFront (column [ centerX, alignBottom ] [ disc 1, disc 2, disc 3, disc 4 ]), centerX ]
+            [ inFront discView, centerX ]
             towerPole
         , towerBase
         ]
