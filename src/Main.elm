@@ -1,12 +1,14 @@
 import Element exposing (Element, Color, el, row, column, alignBottom, inFront, fill, width, rgb255, spacing, spaceEvenly, centerX, centerY, padding, paddingXY)
+
 import Element.Background as Background
 import Basics exposing (modBy)
 import Element.Border as Border
 
 
-main = 
+main =
     Element.layout []
         myRowOfStuff
+
 
 myRowOfStuff : Element msg
 myRowOfStuff =
@@ -15,6 +17,7 @@ myRowOfStuff =
         , tower
         , tower
         ]
+
 
 towerBase : Element msg
 towerBase =
@@ -26,6 +29,7 @@ towerBase =
         ]
         Element.none
 
+
 towerPole : Element msg
 towerPole =
     el
@@ -36,15 +40,17 @@ towerPole =
         ]
         Element.none
 
+
 tower : Element msg
 tower =
     column
         [ width fill ]
         [ el
-              [ inFront (column [centerX, alignBottom] [disc 1, disc 2, disc 3, disc 4]), centerX ]
-              towerPole
+            [ inFront (column [ centerX, alignBottom ] [ disc 1, disc 2, disc 3, disc 4 ]), centerX ]
+            towerPole
         , towerBase
         ]
+
 
 disc : Int -> Element msg
 disc n =
@@ -57,6 +63,7 @@ disc n =
         , centerX
         ]
         Element.none
+
 
 discColor : Int -> Color
 discColor n =
