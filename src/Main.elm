@@ -1,4 +1,4 @@
-import Element exposing (Element, Color, el, row, column, alignBottom, inFront, fill, width, rgb255, spacing, spaceEvenly, centerX, centerY, padding, paddingXY)
+import Element exposing (Color, Element, alignBottom, centerX, centerY, column, el, fill, inFront, padding, paddingXY, rgb255, row, spaceEvenly, spacing, text, width)
 
 import Element.Background as Background
 import Basics exposing (modBy)
@@ -63,11 +63,10 @@ disc n =
         , Border.rounded 5
         , Border.solid
         , Border.width 1
-        , paddingXY (10 * (n + 1)) 10
+        , paddingXY (10 * (n + 1)) 0
         , centerX
         ]
-        Element.none
-
+        (text (String.fromInt n))
 
 discColor : Int -> Color
 discColor n =
